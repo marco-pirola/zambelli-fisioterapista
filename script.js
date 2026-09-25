@@ -1,4 +1,6 @@
-// Menu mobile
+// =========================================================
+// MENU MOBILE
+// =========================================================
 
 const toggle = document.querySelector(".menu-toggle");
 const nav = document.querySelector(".nav");
@@ -40,7 +42,9 @@ if (toggle && nav) {
 }
 
 
-// Anno nel footer
+// =========================================================
+// ANNO FOOTER
+// =========================================================
 
 const year = document.querySelector("#year");
 

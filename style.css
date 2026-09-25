@@ -2,11 +2,9 @@
   --bg: #fbfcfc;
   --white: #ffffff;
   --tint: #f2f6f5;
-
   --ink: #10201d;
   --muted: #586863;
 
-  /* Palette derivata dal logo */
   --blu: #05668d;
   --teal: #028090;
   --verde: #00a896;
@@ -14,7 +12,7 @@
   --verde-scuro: #5d835f;
 
   --line: rgba(16, 32, 29, 0.12);
-  --line-strong: rgba(16, 32, 29, 0.2);
+  --line-strong: rgba(16, 32, 29, 0.20);
 
   --font: "Schibsted Grotesk", "Helvetica Neue", Arial, sans-serif;
   --wrap: 1120px;
@@ -39,6 +37,7 @@ body {
   font-size: 1.0625rem;
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
 }
 
 h1,
@@ -57,9 +56,13 @@ a {
   color: inherit;
 }
 
+button {
+  font: inherit;
+}
+
 :focus-visible {
   outline: 2px solid var(--teal);
-  outline-offset: 3px;
+  outline-offset: 4px;
 }
 
 .skip-link {
@@ -82,7 +85,10 @@ a {
   margin-inline: auto;
 }
 
-/* HEADER */
+
+/* =========================================================
+   HEADER
+========================================================= */
 
 .site-header {
   position: sticky;
@@ -105,13 +111,14 @@ a {
 .brand {
   display: flex;
   flex-direction: column;
-  text-decoration: none;
   line-height: 1.12;
+  text-decoration: none;
 }
 
 .brand-name {
   font-size: 1.05rem;
   font-weight: 700;
+  letter-spacing: -0.01em;
 }
 
 .brand-role {
@@ -176,7 +183,10 @@ a {
   transform: translateY(-4.5px) rotate(-45deg);
 }
 
-/* BUTTONS */
+
+/* =========================================================
+   BUTTONS
+========================================================= */
 
 .btn {
   display: inline-flex;
@@ -207,18 +217,21 @@ a {
 
 .btn-quiet {
   border: 1.5px solid var(--line-strong);
-  color: var(--ink);
   background: transparent;
+  color: var(--ink);
 }
 
 .btn-quiet:hover {
-  background: var(--ink);
   border-color: var(--ink);
+  background: var(--ink);
   color: var(--white);
   transform: translateY(-1px);
 }
 
-/* GENERALI */
+
+/* =========================================================
+   GENERALI
+========================================================= */
 
 .section {
   padding: 6rem 0;
@@ -233,28 +246,28 @@ a {
   display: inline-block;
   margin-bottom: 0.9rem;
   color: var(--teal);
-  font-size: 0.78rem;
+  font-size: 0.77rem;
   font-weight: 700;
-  letter-spacing: 0.09em;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
 }
 
 .section h2,
 .split-head h2 {
-  font-size: clamp(2.2rem, 4vw, 3.3rem);
-  line-height: 1.02;
+  font-size: clamp(2.2rem, 4vw, 3.25rem);
+  line-height: 1.03;
 }
 
 .section-intro {
-  max-width: 47rem;
+  max-width: 49rem;
 }
 
 .section-intro-wide {
-  max-width: 52rem;
+  max-width: 53rem;
 }
 
 .section-intro > p:last-child {
-  max-width: 48ch;
+  max-width: 49ch;
   margin-top: 1.1rem;
   color: var(--muted);
 }
@@ -272,7 +285,10 @@ a {
   color: var(--muted);
 }
 
-/* HERO */
+
+/* =========================================================
+   HERO
+========================================================= */
 
 .hero {
   padding: 6.5rem 0 4rem;
@@ -287,7 +303,7 @@ a {
 .hero h1 {
   max-width: 13ch;
   font-size: clamp(3.5rem, 7vw, 6.2rem);
-  line-height: 0.95;
+  line-height: 0.94;
   font-weight: 800;
   letter-spacing: -0.055em;
 }
@@ -298,10 +314,10 @@ a {
 }
 
 .hero-lead {
-  max-width: 57ch;
+  max-width: 58ch;
   margin-top: 2rem;
   color: var(--muted);
-  font-size: 1.17rem;
+  font-size: 1.16rem;
 }
 
 .hero-actions {
@@ -311,47 +327,55 @@ a {
   margin-top: 2.1rem;
 }
 
-.hero-foot {
+.hero-route {
   display: flex;
   align-items: center;
   flex-wrap: wrap;
-  gap: 0.7rem;
+  gap: 0.55rem;
   margin-top: 4rem;
   padding-top: 1.3rem;
   border-top: 1px solid var(--line);
   color: var(--muted);
-  font-size: 0.86rem;
+  font-size: 0.83rem;
 }
 
-.hero-foot span:not(.arrow) {
-  padding: 0.34rem 0.65rem;
+.hero-route span:not(.hero-route-arrow),
+.hero-route strong {
+  display: inline-flex;
+  align-items: center;
+  min-height: 2rem;
+  padding: 0.25rem 0.65rem;
   border: 1px solid var(--line);
   border-radius: 999px;
+  font-weight: 500;
 }
 
-.hero-foot .arrow {
+.hero-route strong {
+  border-color: rgba(2, 128, 144, 0.24);
+  background: rgba(2, 128, 144, 0.06);
   color: var(--teal);
-  font-size: 1.1rem;
+  font-weight: 650;
 }
 
-.hero-foot strong {
-  color: var(--ink);
-  font-weight: 700;
+.hero-route-arrow {
+  color: var(--teal);
+  font-size: 1.05rem;
 }
 
-/* PERCORSO */
+
+/* =========================================================
+   FINALIZZARE IL MOVIMENTO
+========================================================= */
 
 .steps {
   margin: 0;
   padding: 0;
   list-style: none;
-  counter-reset: step;
 }
 
 .steps li {
-  counter-increment: step;
   display: grid;
-  grid-template-columns: 3.2rem 1fr;
+  grid-template-columns: 3.1rem 1fr;
   gap: 1rem;
   padding: 1.5rem 0;
   border-bottom: 1px solid var(--line);
@@ -363,7 +387,7 @@ a {
 
 .step-number {
   color: var(--teal);
-  font-size: 1.6rem;
+  font-size: 1.55rem;
   font-weight: 800;
   line-height: 1;
 }
@@ -373,48 +397,29 @@ a {
 }
 
 .steps p {
-  max-width: 46ch;
+  max-width: 47ch;
   margin-top: 0.35rem;
   color: var(--muted);
 }
 
-/* MANIFESTO */
 
-.manifesto {
-  padding: 6.2rem 0;
-  background: var(--ink);
-  color: var(--white);
-  text-align: center;
-}
+/* =========================================================
+   TRE MONDI
+========================================================= */
 
-.manifesto p {
-  max-width: 22ch;
-  margin: auto;
-  font-size: clamp(2.3rem, 5vw, 4rem);
-  line-height: 1.08;
-  font-weight: 700;
-  letter-spacing: -0.04em;
-}
-
-.manifesto span {
-  display: inline-block;
-  color: var(--verde-chiaro);
-}
-
-/* MONDI */
-
-.mondi-grid {
+.mondi-scroller {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 1.2rem;
+  gap: 1.25rem;
   margin-top: 3rem;
 }
 
 .mondo-card {
-  padding: 1.7rem;
-  background: var(--white);
+  min-height: 14rem;
+  padding: 1.85rem 1.6rem;
   border: 1px solid var(--line);
   border-top: 3px solid var(--teal);
+  background: var(--white);
 }
 
 .mondo-card:nth-child(2) {
@@ -425,78 +430,77 @@ a {
   border-top-color: var(--verde-scuro);
 }
 
-.card-number {
-  display: block;
-  margin-bottom: 2.2rem;
-  color: var(--muted);
-  font-size: 0.78rem;
-  font-weight: 700;
-}
-
 .mondo-card h3 {
-  font-size: 1.6rem;
+  font-size: 1.65rem;
 }
 
 .mondo-card p {
-  max-width: 38ch;
-  margin-top: 0.75rem;
+  max-width: 39ch;
+  margin-top: 0.85rem;
   color: var(--muted);
 }
 
-/* AREE / SEO */
 
-.problem-list {
+/* =========================================================
+   PROBLEMATICHE
+========================================================= */
+
+.problem-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 0;
-  margin: 3rem 0 0;
-  padding: 0;
-  list-style: none;
-  border-top: 1px solid var(--line);
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  margin-top: 3rem;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  background: var(--line);
 }
 
-.problem-list li {
-  display: grid;
-  grid-template-columns: 2.8rem 1fr;
+.problem-card {
+  min-height: 12.5rem;
+  display: flex;
+  flex-direction: column;
   align-items: center;
+  justify-content: center;
   gap: 1rem;
-  min-height: 5rem;
-  padding: 1rem 0.5rem 1rem 0;
-  border-bottom: 1px solid var(--line);
+  padding: 1.75rem;
+  background: var(--white);
+  text-align: center;
 }
 
-.problem-list li:nth-child(odd) {
-  padding-right: 2rem;
-  border-right: 1px solid var(--line);
+.problem-icon {
+  width: 4.5rem;
+  height: 4.5rem;
+  object-fit: contain;
+  display: block;
+  flex-shrink: 0;
 }
 
-.problem-list li:nth-child(even) {
-  padding-left: 2rem;
+.problem-card h3 {
+  max-width: 18ch;
+  margin: 0;
+  font-size: 1.05rem;
+  line-height: 1.25;
 }
 
-.problem-list span {
-  color: var(--teal);
-  font-size: 0.78rem;
-  font-weight: 700;
-}
 
-.problem-list strong {
-  font-size: 1rem;
-}
-
-/* BIO */
+/* =========================================================
+   BIO
+========================================================= */
 
 .bio p {
-  max-width: 58ch;
+  max-width: 59ch;
   color: var(--muted);
   font-size: 1.06rem;
 }
 
 .bio p + p {
-  margin-top: 1.15rem;
+  margin-top: 1.2rem;
 }
 
-/* METODO */
+
+/* =========================================================
+   COME LAVORO
+========================================================= */
 
 .method {
   margin: 0;
@@ -505,9 +509,9 @@ a {
 
 .method-item {
   display: grid;
-  grid-template-columns: 2rem 1fr;
+  grid-template-columns: 0.5rem 1fr;
   gap: 1rem;
-  padding: 1.5rem 0;
+  padding: 1.45rem 0;
   border-top: 1px solid var(--line);
 }
 
@@ -516,10 +520,12 @@ a {
   border-top: 0;
 }
 
-.method-number {
-  color: var(--teal);
-  font-size: 0.82rem;
-  font-weight: 700;
+.method-marker {
+  width: 0.35rem;
+  height: 0.35rem;
+  margin-top: 0.55rem;
+  border-radius: 50%;
+  background: var(--teal);
 }
 
 .method-item h3 {
@@ -527,20 +533,23 @@ a {
 }
 
 .method-item p {
-  max-width: 48ch;
+  max-width: 49ch;
   margin-top: 0.4rem;
   color: var(--muted);
 }
 
 .method-note {
-  margin-top: 1.35rem;
+  margin-top: 1rem;
   padding-top: 1rem;
   border-top: 1px solid var(--line);
   color: var(--muted);
   font-size: 0.92rem;
 }
 
-/* TESTIMONIANZE */
+
+/* =========================================================
+   TESTIMONIANZE
+========================================================= */
 
 .quote-slots {
   display: grid;
@@ -559,9 +568,9 @@ a {
   background: var(--white);
 }
 
-.quote-slot span {
+.quote-mark {
   color: var(--teal);
-  font-size: 2.8rem;
+  font-size: 2.7rem;
   line-height: 0.8;
 }
 
@@ -570,7 +579,10 @@ a {
   font-size: 0.92rem;
 }
 
-/* FOTO */
+
+/* =========================================================
+   FOTO
+========================================================= */
 
 .photos {
   display: grid;
@@ -581,12 +593,17 @@ a {
 }
 
 .photo-slot {
+  min-height: 15rem;
   display: grid;
   place-items: center;
-  min-height: 15rem;
   padding: 1rem;
   border: 1px dashed var(--line-strong);
-  background: var(--white);
+  background:
+    linear-gradient(
+      135deg,
+      rgba(2, 128, 144, 0.04),
+      rgba(0, 168, 150, 0.08)
+    );
   color: var(--muted);
   text-align: center;
 }
@@ -596,7 +613,10 @@ a {
   min-height: 31rem;
 }
 
-/* STUDIO */
+
+/* =========================================================
+   STUDIO
+========================================================= */
 
 .info {
   margin: 2rem 0 0;
@@ -611,8 +631,8 @@ a {
   color: var(--muted);
   font-size: 0.82rem;
   font-weight: 600;
-  text-transform: uppercase;
   letter-spacing: 0.08em;
+  text-transform: uppercase;
 }
 
 .info dd {
@@ -632,12 +652,20 @@ a {
   min-height: 31rem;
   display: grid;
   place-items: center;
-  background: var(--white);
   border: 1px dashed var(--line-strong);
+  background:
+    linear-gradient(
+      135deg,
+      rgba(2, 128, 144, 0.04),
+      rgba(0, 168, 150, 0.08)
+    );
   color: var(--muted);
 }
 
-/* FOOTER */
+
+/* =========================================================
+   FOOTER
+========================================================= */
 
 .site-footer {
   padding: 2.5rem 0;
@@ -646,7 +674,7 @@ a {
 
 .footer-inner {
   display: flex;
-  align-items: end;
+  align-items: flex-end;
   justify-content: space-between;
   gap: 2rem;
 }
@@ -667,16 +695,22 @@ a {
   gap: 0.2rem;
 }
 
-/* RESPONSIVE */
 
-@media (max-width: 900px) {
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 950px) {
 
   .split {
     grid-template-columns: 1fr;
     gap: 3rem;
   }
 
-  .mondi-grid,
+  .problem-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
   .quote-slots {
     grid-template-columns: 1fr;
   }
@@ -694,7 +728,9 @@ a {
   .studio-photo {
     min-height: 22rem;
   }
+
 }
+
 
 @media (max-width: 780px) {
 
@@ -749,30 +785,62 @@ a {
     width: 100%;
   }
 
+  .hero-route {
+    gap: 0.45rem;
+    margin-top: 3rem;
+  }
+
   .section {
     padding: 4.5rem 0;
   }
 
-  .problem-list {
+  /* Swipe manuale richiesto da Alessandro */
+
+  .mondi-scroller {
+    display: flex;
+    overflow-x: auto;
+    gap: 1rem;
+    margin-top: 2rem;
+    padding-bottom: 0.5rem;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+
+  .mondi-scroller::-webkit-scrollbar {
+    display: none;
+  }
+
+  .mondo-card {
+    flex: 0 0 82%;
+    min-height: 13.5rem;
+    scroll-snap-align: start;
+  }
+
+  .problem-grid {
     grid-template-columns: 1fr;
   }
 
-  .problem-list li:nth-child(odd),
-  .problem-list li:nth-child(even) {
-    padding-left: 0;
-    padding-right: 0;
-    border-right: 0;
+  .problem-card {
+    min-height: 10.5rem;
+  }
+
+  .problem-icon {
+    width: 4rem;
+    height: 4rem;
   }
 
   .footer-inner {
-    flex-direction: column;
     align-items: flex-start;
+    flex-direction: column;
   }
 
   .footer-meta {
     align-items: flex-start;
   }
+
 }
+
 
 @media (max-width: 520px) {
 
@@ -780,25 +848,34 @@ a {
     width: min(var(--wrap), calc(100% - 1.5rem));
   }
 
-  .hero-foot {
-    gap: 0.45rem;
+  .hero-kicker {
+    font-size: 0.9rem;
   }
 
-  .hero-foot span:not(.arrow) {
+  .hero-lead {
+    font-size: 1.05rem;
+  }
+
+  .hero-route {
+    align-items: flex-start;
+  }
+
+  .hero-route strong,
+  .hero-route span:not(.hero-route-arrow) {
     font-size: 0.78rem;
   }
 
-  .manifesto {
-    padding: 5rem 0;
-  }
-
-  .mondo-card {
-    padding: 1.4rem;
-  }
 }
 
+
 @media (prefers-reduced-motion: reduce) {
+
   html {
     scroll-behavior: auto;
   }
+
+  .btn {
+    transition: none;
+  }
+
 }
