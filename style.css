@@ -456,27 +456,25 @@ button {
 }
 
 .problem-card {
-  min-height: 12.5rem;
+  min-height: 10rem;
   display: flex;
-  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  gap: 1rem;
-  padding: 1.75rem;
+  justify-content: flex-start;
+  gap: 1.15rem;
+  padding: 1.5rem 1.75rem;
   background: var(--white);
-  text-align: center;
+  text-align: left;
 }
 
 .problem-icon {
-  width: 4.5rem;
-  height: 4.5rem;
+  width: 4.25rem;
+  height: 4.25rem;
   object-fit: contain;
   display: block;
-  flex-shrink: 0;
+  flex: 0 0 4.25rem;
 }
 
 .problem-card h3 {
-  max-width: 18ch;
   margin: 0;
   font-size: 1.05rem;
   line-height: 1.25;
@@ -822,12 +820,14 @@ button {
   }
 
   .problem-card {
-    min-height: 10.5rem;
+    min-height: 8.5rem;
+    padding: 1.25rem 1.4rem;
   }
 
   .problem-icon {
-    width: 4rem;
-    height: 4rem;
+    width: 3.75rem;
+    height: 3.75rem;
+    flex-basis: 3.75rem;
   }
 
   .footer-inner {
